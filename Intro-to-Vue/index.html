@@ -11,9 +11,11 @@
   <body>
     <div id="app">
       <div class="navbar"></div>
-      <div class="cart">Cart({{cart}})</div>
-      <div class="cart">Cart({{cart}})</div>
-      <product-display :premum="premum"></product-display>
+      <div class="cart">Cart({{cart.length}})</div>
+      <product-display
+        @add-to-cart="addCart"
+        :premum="premum"
+      ></product-display>
     </div>
 
     <!-- Import Js -->

@@ -64,14 +64,14 @@ app.component("product-display", {
   },
 
   methods: {
-    addCart() {
-      this.cart += 1;
-    },
     changeImage(variantImage) {
       this.image = variantImage;
     },
     updateVariant(index) {
       this.selectedVariant = index;
+    },
+    addCart() {
+      this.$emit("add-to-cart", this.variants[this.selectedVariant].id);
     },
   },
   computed: {
