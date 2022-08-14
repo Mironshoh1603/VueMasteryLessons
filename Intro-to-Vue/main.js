@@ -6,6 +6,8 @@ const app = Vue.createApp({
       lastName: "Asadov",
       clicked: false,
       image: "./assets/images/socks_green.jpg",
+      stock: true,
+      quantity: 36,
     };
   },
 });

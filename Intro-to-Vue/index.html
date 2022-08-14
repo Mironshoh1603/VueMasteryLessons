@@ -16,6 +16,15 @@
           <div class="product-image">
             <img :src="image" alt="" />
           </div>
+          <div class="product-info">
+            <h1>{{product}}</h1>
+            <h3 v-show="stock">In Stock</h3>
+            <p v-if="quantity>30">yetarli</p>
+            <p v-else-if="quantity<=30&&quantity>0">
+              hammasi sotilgan shekilli
+            </p>
+            <p v-else>Tugagan</p>
+          </div>
         </div>
       </div>
     </div>
