@@ -18,7 +18,9 @@
             <img :src="image" alt="" />
           </div>
           <div class="product-info">
-            <h1>product</h1>
+            <h1>{{product}}</h1>
+            <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p>
             <ul>
               <li v-for="detail in details">{{detail}}</li>
             </ul>
@@ -27,10 +29,12 @@
               v-for="variant in variants"
               :key="variant.id"
               @mouseover="changeImage(variant.image)"
-            >
-              {{variant.color}}
-            </div>
-            <button class="button" @click="addCart">Add to Cart</button>
+              class="color-circle"
+              :style="{backgroundColor:variant.color}"
+            ></div>
+            <button class="button" @click="addCart" :disabled="!inStock">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
