@@ -17,13 +17,16 @@
             <img :src="image" alt="" />
           </div>
           <div class="product-info">
-            <h1>{{product}}</h1>
-            <h3 v-show="stock">In Stock</h3>
-            <p v-if="quantity>30">yetarli</p>
-            <p v-else-if="quantity<=30&&quantity>0">
-              hammasi sotilgan shekilli
-            </p>
-            <p v-else>Tugagan</p>
+            <h1>product</h1>
+            <ul>
+              <li v-for="detail in details">{{detail}}</li>
+            </ul>
+            <ul>
+              <li v-for="(size, index) in sizes" :key="index">{{size}}</li>
+            </ul>
+            <div v-for="variant in variants" :key="variant.id">
+              {{variant.color}}
+            </div>
           </div>
         </div>
       </div>
